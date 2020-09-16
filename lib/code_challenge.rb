@@ -29,16 +29,8 @@ class CodeChallenge
 
   # Write a recursive function to determine the Nth Fibonacci Number in the Fibonacci sequence
   def nth_fibonacci(nth)
-    fib = [0,1]
-    counter = 0
-
-    while counter < nth do
-      next_num = fib.shift + fib.last
-      fib.push(next_num)
-      counter += 1
-    end
-
-    fib.first
+    return nth if [0,1].include?(nth)
+    nth_fibonacci(nth - 1) + nth_fibonacci(nth - 2)
   end
 
   # Write a function that takes and array of numbers, multiplies each them by their index, and writes it's values to a csv.
